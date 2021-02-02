@@ -1,0 +1,1080 @@
+
+body {
+    scrollbar-arrow-color: #fff;
+    scrollbar-3dlight-color: #444444;
+    scrollbar-highlight-color: #444444;
+    /*scrollbar-face-color: #161616;*/
+    scrollbar-face-color: #5f5f5f;
+    scrollbar-shadow-color: #444444;
+    scrollbar-darkshadow-color: #444444;
+    scrollbar-track-color: #444444;
+}
+/*body::-webkit-scrollbar {
+        width: 16px;
+    }
+
+    body::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+    }*/
+mediaqueryhtml {
+    padding: 0;
+    margin: 0;
+}
+
+
+.fa-edit {
+    width: 15px;
+    height: 17px;
+    background: url(../Images/edit.png) no-repeat;
+    float: left !important;
+    margin: 0px 10px 0 0;
+}
+
+.fa-pencil {
+    width: 15px;
+    height: 17px;
+    background: url('../Images/edit.png') no-repeat !important;
+    float: left !important;
+    margin: 0px 10px 0 0;
+}
+
+.fa-trash {
+    width: 15px;
+    height: 17px;
+    background: url('../Images/delete.png') no-repeat !important;
+    float: left !important;
+    margin: 0px 0px 0 0;
+}
+
+.fa-check {
+    width: 15px;
+    height: 17px;
+    background: url('../Images/check.png') no-repeat !important;
+    float: left !important;
+    margin: 0px 0px 0 0;
+}
+
+.fa-arrow-down {
+    width: 15px;
+    height: 9px;
+    background: url('../Images/arrow-down.png') no-repeat !important;
+    float: right !important;
+    margin: 5px 10px 0 0;
+}
+
+
+.fa-calendar {
+    width: 20px;
+    height: 20px;
+    background: url('../Images/calendar-icon.png') no-repeat !important;
+    float: left !important;
+    margin: 0px 0px 0 0;
+}
+
+
+.cal_Theme1 .ajax__calendar_container {
+    background-color: #e2e2e2;
+    border: solid 1px #cccccc;
+    width: 200px;
+}
+
+.cal_Theme1 .ajax__calendar_header {
+    background-color: #e2e2e2;
+    margin-bottom: 4px;
+}
+
+.cal_Theme1 .ajax__calendar_title,
+.cal_Theme1 .ajax__calendar_next,
+.cal_Theme1 .ajax__calendar_prev {
+    color: black;
+    padding-top: 3px;
+}
+
+.cal_Theme1 .ajax__calendar_body {
+    background-color: #e9e9e9;
+    border: solid 1px #cccccc;
+    width: 180px;
+}
+
+.cal_Theme1 .ajax__calendar_dayname {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 4px;
+    height: 25px;
+    width: 25px;
+    text-align: right;
+    padding: 0 2px;
+    margin-top: 2px;
+}
+
+.cal_Theme1 .ajax__calendar_day {
+    text-align: center;
+}
+
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_day,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_month,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_year,
+.cal_Theme1 .ajax__calendar_active {
+    color: #004080;
+    /*color: black;*/
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+
+
+
+
+.cal_Theme1 .ajax__calendar_today {
+    font-weight: bold;
+}
+
+
+
+
+
+.cal_Theme1 .ajax__calendar_other,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_today,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_title {
+    /*color: #bbbbbb;*/
+    color: black;
+}
+
+
+
+
+.oscroll {
+    width: 97%;
+    height: 90px;
+    overflow: hidden;
+}
+
+    .oscroll:hover {
+        width: 97%;
+        height: 90px;
+        overflow: auto;
+    }
+
+body {
+    font-family: Arial;
+    font-size: 14px;
+    color: #444444;
+    background: url(../images/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#ddlCostCentre {
+    height: auto;
+    overflow: auto;
+}
+/*.sidenav{
+    visibility:visible !important;
+}*/
+
+
+.hambuerger-icon-line {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 6px 0;
+}
+
+.menu-attendace-icon {
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url(../images/attendace-icon.png) no-repeat;
+    margin: 8px 8px;
+}
+
+.menu-delegate-icon {
+    width: 60px;
+    height: 35px;
+    float: left;
+    background: url(../images/delegates-icon.png) no-repeat;
+    margin: 8px 2px;
+}
+
+.menu-escalation-icon {
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url(../images/escalation-icon.png) no-repeat;
+    margin: 8px 8px;
+}
+
+.menu-fallback-icon {
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url(../images/fall-back.png) no-repeat;
+    margin: 8px 8px;
+}
+
+.menu-admin-icon {
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url(../images/admin.png) no-repeat;
+    margin: 8px 8px;
+}
+
+
+.menu-ama-icon {
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url(../images/ama-report.png) no-repeat;
+    margin: 8px 8px;
+}
+
+.menu-Attendance_history-icon {
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url(../images/attandance-history.png) no-repeat;
+    margin: 8px 8px;
+}
+
+
+.menu-attendance_run-icon {
+    width: 50px;
+    height: 40px;
+    float: left;
+    background: url(../images/attandance_run.png) no-repeat;
+    margin: 8px 8px;
+}
+
+
+.menu-report-icon {
+    width: 50px;
+    height: 40px;
+    float: left;
+    background: url(../images/report-icon.png) no-repeat;
+    margin: 8px 8px;
+}
+
+.menu-user_management-icon {
+    width: 50px;
+    height: 40px;
+    float: left;
+    background: url(../images/user-management.png) no-repeat;
+    margin: 8px 4px;
+}
+
+.menu-repository-icon {
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url(../images/repository-icon.png) no-repeat;
+    margin: 8px 8px;
+}
+
+.menu-roster-icon {
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url(../images/roster-icon.png) no-repeat;
+    margin: 8px 8px;
+}
+
+.menu-attendance-cc-icon {
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url('../Images/attandance-cc.png') no-repeat ;
+    margin: 8px 8px;
+}
+
+.menu-audit-dashboard-icon {
+    background: url('../Images/Audit-Dashboard.png') no-repeat;
+    margin: 8px 8px;
+    width: 50px;
+    height: 35px;
+    float: left;
+}
+
+.menu-lwp-icon {
+    margin: 8px 8px;
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url('../Images/lwp.png') no-repeat;
+}
+
+.menu-LWP-rev-admin-icon {
+    margin: 8px 8px;
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url('../Images/LWP_Reversal-Admin.png') no-repeat;
+}
+
+.menu-manage-attendance-icon {
+    margin: 8px 8px;
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url('../Images/Manage-Attendance.png') no-repeat;
+}
+
+.menu-mark-supplementary-icon {
+    margin: 8px 8px;
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url('../Images/Manage-Supplementary-Pay-Exceptions.png') no-repeat;
+}
+
+.menu-UA-for-team-icon {
+    margin: 8px 8px;
+    width: 50px;
+    height: 35px;
+    float: left;
+    background: url('../Images/UA-for-your-Team.png') no-repeat;
+}
+
+
+
+.menu-txt {
+    margin: 8px;
+    padding: 7px 0;
+    transition-delay: 20s;
+}
+
+.menu-open {
+    margin: 18px 15px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.sidenav {
+    opacity: 1;
+    width: 250px;
+    position: fixed;
+    z-index: 99999;
+    top: 00px;
+    left: 0;
+    background: #444444;
+    -moz-box-shadow: 1px 1px 2px #000;
+    -webkit-box-shadow: 1px 1px 2px #000;
+    box-shadow: 1px 1px 2px #000;
+    padding-top: 10px;
+}
+
+
+
+    .sidenav:hover {
+        height: 100%;
+        /*overflow-y: auto;*/
+    }
+
+
+
+
+    .sidenav a {
+        padding: 8px 8px 8px 12px;
+        text-decoration: none;
+        font-size: 14px;
+        color: #aaaaab;
+        display: block;
+        transition: 0.3s;
+        font-weight: bold;
+        clear: both;
+    }
+
+        .sidenav a:hover, .offcanvas a:focus {
+            color: #43a047;
+            text-decoration: underline;
+        }
+
+
+.closebtn {
+    font-size: 25px !important;
+    color: #fff !important;
+    padding:0 10px;
+    float:right;
+}
+
+.logo-img {
+    margin: 1% 0 1% 0%;
+    max-width: 100%;
+    height: auto;
+}
+
+header {
+    margin: 0px 0;
+    background: url(../images/header-bg.jpg);
+}
+
+.user-name {
+    position: relative;
+}
+
+.user-details {
+    position: absolute;
+    right: 0;
+}
+
+:first-child.media {
+    margin-top: 10px;
+}
+
+.media h4 {
+    color: #fff;
+}
+
+.media h5 {
+    color: #fff;
+    margin: 8px 0;
+}
+
+.clear {
+    width: 100%;
+    height: 0;
+    clear: both;
+}
+
+.clear-10 {
+    width: 100%;
+    height: 10px;
+    clear: both;
+}
+
+.clear-20 {
+    width: 100%;
+    height: 20px;
+    clear: both;
+}
+
+.clear-300 {
+    width: 100%;
+    height: 300px;
+    clear: both;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.scroll-vr {
+    height: 280px;
+    overflow-y: auto;
+}
+
+.padding-0 {
+    padding: 0px !important;
+}
+
+.form-control {
+    width: 80%;
+    padding:6px;
+}
+
+.clear-10 {
+    width: 100%;
+    height:10px;
+    clear:both;
+}
+
+.input-group {
+    width: 80%;
+}
+
+    .input-group .form-control {
+        z-index: 9999;
+        top: 0px;
+        left: 0px;
+    }
+
+/*.container-fluid {
+    padding-right: 30px;
+    padding-left: 100px;
+}*/
+
+.margin-t-20 {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
+}
+
+ul.tabs {
+    margin: 0px 0 0 0;
+    padding: 0 0px;
+    float: left;
+    list-style: none;
+    height: 32px;
+    width: 100%;
+}
+
+    ul.tabs li {
+        float: left;
+        margin: 0;
+        cursor: pointer;
+        padding: 0px 30px;
+        height: 32px;
+        line-height: 32px;
+        border: 1px solid #2a82c0;
+        border-bottom: none;
+        border-left: 1px solid #2a82c0;
+        font-weight: bold;
+        background: #87b9da;
+        overflow: hidden;
+        position: relative;
+        color: #fff;
+    }
+
+        ul.tabs li:hover {
+            background: #87b9da;
+        }
+
+        ul.tabs li.active {
+            background: #2a82c0;
+            color: #fff;
+        }
+
+.tab_container {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.tab_content {
+    padding: 0px 0px;
+    display: none;
+}
+
+ul, ol {
+    padding: 0px;
+    margin: 0px;
+}
+
+.border-panel {
+    border: 1px solid #2a82c0;
+    padding: 20px 10px;
+}
+
+
+.border-left {
+    border-left: 1px solid #2a82c0;
+}
+
+.border-right {
+    /*border-right: 1px solid #2a82c0;*/
+    border-right: 1px solid Transparent;
+    padding: 0px 0 0 5px;
+}
+
+.selectedRowBackground {
+    background: rgba(51, 122, 182, .5);
+}
+
+.table {
+    margin-bottom: 0px;
+    background: white;
+    opacity: 0.8;
+}
+
+    .table th {
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #a4a4a4;
+        border-collapse: collapse !important;
+        border-spacing: 0px !important;
+    }
+
+    .table > tbody > tr > th {
+        vertical-align: middle;
+        border: 1px solid #a4a4a4;
+        border-collapse: collapse !important;
+        border-spacing: 0px !important;
+    }
+
+    .table > tbody > tr > td {
+        vertical-align: middle;
+        border: 1px solid #2a82c0;
+        border-collapse: collapse !important;
+        border-spacing: 0px !important;
+    }
+
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #2a82c0;
+}
+
+.w-14per {
+    width: 14.28%;
+    float: left;
+}
+
+.pagination {
+    margin: 0;
+}
+
+
+
+    .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+        z-index: 0;
+    }
+
+.title-calendar {
+    background: #337ab7;
+    color: #fff;
+    margin: -20px 0px 0 -1px;
+    text-align: center;
+    padding: 5px;
+}
+
+    .title-calendar a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+#calendar {
+    max-width: 100%;
+    margin: 0 auto;
+    border: 1px solid #a4a4a4;
+    background: #fff;
+}
+
+.calendar {
+    max-width: 100%;
+    margin: 0 auto;
+    border: 1px solid #a4a4a4;
+    background: #fff;
+}
+
+.title-calendar {
+    background: #337ab7;
+    color: #fff;
+    margin: -20px 0px 0 -1px;
+    text-align: center;
+    padding: 5px;
+}
+
+.calendar a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.fc-left h2 {
+    font-size: 20px;
+    margin: 2px 0px !important;
+}
+
+.fc-header-toolbar.fc-toolbar {
+    margin: 2px 4px !important;
+}
+
+.fc-unthemed .fc-content, .fc-unthemed .fc-divider, .fc-unthemed .fc-list-heading td, .fc-unthemed .fc-list-view, .fc-unthemed .fc-popover, .fc-unthemed .fc-row, .fc-unthemed tbody, .fc-unthemed td, .fc-unthemed th, .fc-unthemed thead {
+    border-color: #a4a4a4 !important;
+}
+
+.fc-basic-view .fc-body .fc-row {
+    min-height: 1em !important;
+}
+
+.fc-basic-view .fc-day-number, .fc-basic-view .fc-week-number {
+    padding: 0px 2px !important;
+}
+
+.fc-event, .fc-event-dot {
+    background: #337ab7 !important;
+}
+
+.fc-unthemed td.fc-today {
+    background: #88badc !important;
+    color: #fff;
+}
+
+.align-middle {
+    padding: 50% 0;
+}
+
+.fc-event {
+    font-size: 10px !important;
+    line-height: 0.9 !important;
+    text-align: center;
+}
+
+.btn-large {
+    width: auto;
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
+    margin: 0 5px 0 0;
+}
+
+.fc-title {
+    text-align: center;
+}
+
+#regularization {
+    display: none;
+}
+
+
+input[value="reg"]:checked ~ #green {
+    display: block;
+}
+
+.attendace-status ul li {
+    list-style-type: none;
+    padding: 5px 0;
+    border-bottom: 1px solid #a4a4a4;
+}
+
+.fc .fc-button-group > * {
+    background: #2a82c0;
+    color: #fff;
+}
+
+.fc-state-default {
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.fc-corner-left.fc-state-default {
+    background: #2a82c0;
+    color: #fff;
+}
+
+
+input[type='radio'], input[type='checkbox'] {
+    margin: 5px 5px 5px 5px;
+    width: 15px;
+    height: 15px;
+    border-width: 2px;
+    border-radius: 4px;
+}
+
+.mediaquery {
+    display: block;
+    overflow-y: hidden;
+    width: 280px;
+    height: 200px;
+}
+
+    .mediaquery:hover {
+        overflow-y: scroll;
+    }
+
+
+.chk-roles td {
+    display: block;
+    margin: 5px;
+    width: 161px;
+}
+
+.form-control option {
+    z-index: 1 !important;
+}
+
+#chkbCostCentre td {
+    padding-right: 15px;
+    float: left;
+    overflow: auto;
+}
+
+#ctl00_MainContent_chkbRoles td {
+    padding-right: 15px;
+    float: left;
+    overflow: auto;
+}
+
+.chk-roles td {
+    padding-right: 15px;
+    float: left;
+    overflow: auto;
+}
+
+#chkbDepartment td {
+    padding-right: 15px;
+    float: left;
+    overflow: auto;
+}
+
+.icon-cal {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.pag table span:hover, .pag table a:hover, .pag table span {
+    background: #337ab7 !important;
+    box-shadow: none !important;
+    color: #fff !important;
+}
+
+.border-panel-cc-attendance {
+    border: 1px solid #2a82c0;
+    padding: 20px;
+}
+
+
+@media screen and (min-width:650px) and (max-width:1800px) {
+    #ctl00_MainContent_chkbRoles td {
+        padding-right: 15px;
+        float: left;
+    }
+    /*}
+
+@media screen and (min-width:650px) and (max-width:1800px) {*/
+    #chkbCostCentre td {
+        padding-right: 15px;
+        float: left;
+    }
+
+    .mediaquery {
+        width: 35%;
+        display: block;
+        overflow: hidden !important;
+    }
+
+        .mediaquery:hover {
+            overflow: scroll !important;
+        }
+
+
+    /*}
+
+@media screen and (min-width:650px) and (max-width:1800px) {*/
+    .form-control option {
+        z-index: -1 !important;
+    }
+
+
+
+
+    .mediaquery {
+        width: 330px;
+        display: block;
+    }
+
+    .title-calendar {
+        background: #337ab7;
+        color: #fff;
+        margin: -20px 0px 0 -1px;
+        text-align: center;
+        padding: 4px;
+    }
+
+    .border-panel {
+        border: 1px solid #2a82c0;
+        padding: 20px 10px;
+    }
+
+
+    .table {
+        overflow-x: auto;
+        /*height:500px;*/
+    }
+
+    .menu-txt {
+        margin: 3px;
+        padding: 7px 0;
+        transition-delay: 20s;
+        /*font-size:10px;*/ /*As on resolution of 1600*900 it doesn't get responsive as pe screen*/
+    }
+
+    .dropdown-content1 a {
+        margin: 3px;
+        padding: 7px 0;
+        transition-delay: 20s;
+        /*font-size: 10px;*/
+    }
+
+    .menu-list-icons {
+        width: 40px !important;
+        height: 33px !important;
+    }
+
+    .menu-attendace-icon {
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url(../images/attendace-icon.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+    .menu-delegate-icon {
+        width: 60px;
+        height: 35px;
+        float: left;
+        background: url(../images/delegates-icon.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+    .menu-escalation-icon {
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url(../images/escalation-icon.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+    .menu-fallback-icon {
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url(../images/fall-back.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+    .menu-admin-icon {
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url(../images/admin.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+
+    .menu-ama-icon {
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url(../images/ama-report.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+    .menu-Attendance_history-icon {
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url(../images/attandance-history.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+
+    .menu-attendance_run-icon {
+        width: 50px;
+        height: 40px;
+        float: left;
+        background: url(../images/attandance_run.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+
+    .menu-report-icon {
+        width: 50px;
+        height: 40px;
+        float: left;
+        background: url(../images/report-icon.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+    .menu-user_management-icon {
+        width: 50px;
+        height: 40px;
+        float: left;
+        background: url(../images/user-management.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+    .menu-repository-icon {
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url(../images/repository-icon.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+    .menu-roster-icon {
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url(../images/roster-icon.png) no-repeat;
+        margin: 2px 2px;
+    }
+
+    .menu-attendance-cc-icon {
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url('../Images/attandance-cc.png') no-repeat;
+        margin: 2px 2px;
+    }
+
+    .menu-audit-dashboard-icon {
+        background: url('../Images/Audit-Dashboard.png') no-repeat;
+        margin: 2px 2px;
+        width: 50px;
+        height: 35px;
+        float: left;
+    }
+
+    .menu-lwp-icon {
+        margin: 2px 2px;
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url('../Images/lwp.png') no-repeat;
+    }
+
+    .menu-LWP-rev-admin-icon {
+        margin: 2px 2px;
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url('../Images/LWP_Reversal-Admin.png') no-repeat;
+    }
+
+    .menu-manage-attendance-icon {
+        margin: 2px 2px;
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url('../Images/Manage-Attendance.png') no-repeat;
+    }
+
+    .menu-mark-supplementary-icon {
+        margin: 2px 2px;
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url('../Images/Manage-Supplementary-Pay-Exceptions.png') no-repeat;
+    }
+
+    .menu-UA-for-team-icon {
+        margin: 2px 2px;
+        width: 50px;
+        height: 35px;
+        float: left;
+        background: url('../Images/UA-for-your-Team.png') no-repeat;
+    }
+
+
+    .scroll-v {
+        overflow: auto;
+        height: 500px;
+    }
+
+    .fc button {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        font-size: 12px !important;
+        height: 1.4em !important;
+        padding: 0 .6em;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    .fc-left h2 {
+        font-size: 15px;
+        margin: 2px 0px !important;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}

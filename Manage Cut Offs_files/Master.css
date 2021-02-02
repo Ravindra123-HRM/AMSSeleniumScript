@@ -1,0 +1,173 @@
+﻿
+/*AutoComplete layout */
+.autocomplete_completionListElement
+{
+	margin: 0 !important;
+	background-color: transparent;
+	color: windowtext;
+	cursor: pointer;
+	overflow: auto;
+	font-size: 12px !important;
+	text-align: left;
+	list-style-type: none;
+	max-height: 250px;
+	height: 250px !important;
+	overflow: auto;
+	z-index: 20000 !important;
+	position: absolute !important;
+}
+/* AutoComplete highlighted item */
+.autocomplete_highlightedListItem
+{
+	background-color: #ffff99;
+	color: black;
+	padding: 1px;
+}
+
+/* AutoComplete item */
+.autocomplete_listItem
+{
+	background-color: lavender;
+	color: windowtext;
+	padding: 1px;
+	font-size: 12px !important;
+	height: 15px;
+}
+
+.trHeader
+{
+	background-color: #A5A5A5;
+}
+
+.trRow
+{
+	/*background-color: #E4E4E4;*/
+}
+
+/* Z-index of #mask must lower than #boxes .window */
+#mask
+{
+	position: absolute;
+	z-index: 9000;
+
+	display: none;
+	left: 0;
+	top: 0;
+}
+#popupDiv .dialogWindow
+{
+	position: absolute; /*width: 440px;*/ /*	height: 200px;*/
+	display: none;
+	z-index: 9999;
+	padding: 20px;
+}
+#mask1
+{
+	position: absolute;
+	z-index: 9000;
+	background-color: #000;
+	display: none;
+	left: 0;
+	top: 0;
+}
+#mask2
+{
+	position: absolute;
+	z-index: 9000;
+	background-color: #000;
+	display: none;
+	left: 0;
+	top: 0;
+}
+#popupDiv1 .dialogWindow
+{
+	position: absolute; /*	width: 440px;*/ /*	height: 200px;*/
+	display: none;
+	z-index: 9999;
+	padding: 20px;
+}
+#popupDiv2 .dialogWindow
+{
+	position: absolute; /*	width: 440px;*/ /*	height: 200px;*/
+	display: none;
+	z-index: 9999;
+	padding: 20px;
+}
+/* Customize your modal window here, you can add background image too */
+#popup
+{
+	/*width: 375px;*/ /*height: 203px;*/
+	background-color: White;
+}
+#popup1
+{
+	/*width: 375px;*/ /*height: 203px;*/
+	background-color: White;
+}
+#popup2
+{
+	/*width: 375px;*/ /*height: 203px;*/
+	background-color: White;
+}
+.close
+{
+	top: -15px;
+	right: -15px;
+	position: absolute;
+	cursor: pointer;
+}
+
+h1, h2
+{
+	text-align: center;
+}
+fieldset
+{
+	height: 100%;
+}
+.popupTd
+{
+	white-space: nowrap;
+}
+td
+{
+	text-align: left;
+    padding: 8px;
+}
+
+
+/**********************************************************/
+.roundedCornerInput
+{
+	background: white;
+	border: 1px double #DDD;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #333;
+	color: #666;
+	padding: 5px 10px; /*width: 165px;*/
+	outline: none; /*behavior: url(PIE.htc);*/
+}
+
+.roundedCornerSelect
+{
+	background: transparent; /*width: 268px; 	padding: 5px;*/
+	font-size: 16px;
+	line-height: 1;
+	border: 0;
+	border-radius: 0;
+	height: 34px;
+	-webkit-appearance: none; /*behavior: url(PIE.htc);*/
+}
+
+a img
+{
+	border: 0;
+	text-decoration: none;
+}
+
+
+table
+{
+     border-spacing:0px;
+    text-align: justify;
+}

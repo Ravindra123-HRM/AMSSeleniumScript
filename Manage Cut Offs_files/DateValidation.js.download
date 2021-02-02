@@ -1,0 +1,109 @@
+﻿
+var validateDateOptions = {
+    startDate: null,
+    endDate: null,
+    isPastDateAllowed: null,
+    isFutureDateAllowed: null,
+    dateDiff: 0,
+    minHours: 0,
+    maxHours: 0,
+    startDateControl: null,
+    endDateControl: null
+};
+
+function ValidateDate() {
+    if (validateDateOptions.startDateControl.val().length != 10) {
+        alert('Start Date cannot be empty');
+        validateDateOptions.startDateControl.focus();
+        return false;
+    }
+    if (validateDateOptions.endDateControl.val().length != 10) {
+        alert('End Date cannot be empty');
+        validateDateOptions.endDateControl.focus();
+        return false;
+    }
+
+    if (validateDateOptions.startDate != null && validateDateOptions.startDate != undefined && validateDateOptions.endDate != null && validateDateOptions.endDate != undefined) {
+        var todayDate = new Date();
+        var sep = validateDateOptions.startDate.indexOf('/') >= 0 ? "/" : "-";
+        sDate = validateDateOptions.startDate.split(sep);
+        eDate = validateDateOptions.endDate.split(sep);
+
+        var year = parseInt(sDate[2]);
+        var month = parseInt(sDate[1], 10);
+        var days = parseInt(sDate[0], 10);
+
+        sDate = new Date(month + "/" + days + "/" + year);
+        days = Math.round(((new Date(year, month)) - (new Date(year, month - 1))) / 86400000);
+
+        if (sDate == 'Invalid Date' || sDate == NaN || (month > 12) || sDate.getDay() > days) {
+            alert('Start Date is not valid');
+            validateDateOptions.startDateControl.focus();
+            return false;
+        }
+
+        var year = parseInt(eDate[2]);
+        var month = parseInt(eDate[1], 10);
+        var days = parseInt(eDate[0], 10);
+
+        eDate = new Date(month + "/" + days + "/" + year);
+        days = Math.round(((new Date(year, month)) - (new Date(year, month - 1))) / 86400000);
+
+        if (eDate == 'Invalid Date' || eDate == NaN || (month > 12) || eDate.getDay() > days) {
+            alert('End Date is not valid');
+            validateDateOptions.endDateControl.focus();
+            return false;
+        }
+
+        validateDateOptions.isPastDateAllowed = (validateDateOptions.isPastDateAllowed != undefined || validateDateOptions.isPastDateAllowed != null) ? validateDateOptions.isPastDateAllowed : true;
+        validateDateOptions.isFutureDateAllowed = (validateDateOptions.isFutureDateAllowed != undefined || validateDateOptions.isFutureDateAllowed != null) ? validateDateOptions.isFutureDateAllowed : true;
+
+        // check if start date is not past date
+        if (!validateDateOptions.isPastDateAllowed) {
+            if (sDate < todayDate) {
+                alert("Start Date cannot be less than Today's Date");
+                validateDateOptions.startDateControl.focus();
+                return false;
+            }
+        }
+
+        // check if end date is not future date
+        if (!validateDateOptions.isFutureDateAllowed) {
+            if (eDate > todayDate) {
+                alert("End Date cannot be greater than Today's Date");
+                validateDateOptions.endDateControl.focus();
+                return false;
+            }
+        }
+
+        // check if end date is not greater than start date
+        if (sDate > eDate) {
+            alert("Start Date cannot be greater than End Date");
+            validateDateOptions.startDateControl.focus();
+            return false;
+        }
+
+        // check the difference between the dates
+        if (validateDateOptions.dateDiff > 0) {
+            var difference = sDate.getTime() - eDate.getTime();
+            var daysDiff = Math.abs(Math.floor(difference / 1000 / 60 / 60 / 24));
+
+            if (daysDiff > validateDateOptions.dateDiff - 1) {
+                alert("Difference between the days cannot be greater than " + (validateDateOptions.dateDiff) + " days");
+                validateDateOptions.startDateControl.focus();
+                return false;
+            }
+        }
+
+        if (validateDateOptions.maxHours > 0 && validateDateOptions.minHours > 0) {
+            if (validateDateOptions.minHours >= todayDate.getHours() && todayDate.getHours() <= validateDateOptions.maxHours) {
+                alert("You cannot view the data. You will be able to see the data between " + validateDateOptions.minHours + " and " + validateDateOptions.maxHours);
+                validateDateOptions.startDateControl.focus();
+                return false;
+            }
+        }
+
+        return true;
+    } else
+        return false;
+}

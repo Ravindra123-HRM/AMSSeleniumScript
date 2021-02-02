@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]" parallel="none">
+  <test verbose="2" name="Default test">
+    <classes>
+      <class name="com.ams.qa.admin.testcases.ManageCutOffTest"/>
+    </classes>
+  </test> <!-- Default test -->
+  <test name="Default test(failed)" parallel="none">
+    <classes>
+      <class name="com.ams.qa.admin.testcases.ManageCutOffTest">
+        <methods>
+          <include name="getEdit"/>
+          <include name="getManageCutOff"/>
+          <include name="getupdate"/>
+          <include name="getAdmin"/>
+          <include name="getNoofDays"/>
+          <include name="getCostcenter"/>
+          <include name="getNoofDaysDate"/>
+          <include name="getCutt_offType"/>
+          <include name="setup"/>
+          <include name="getUserRegisteration"/>
+          <include name="getCTNCT"/>
+          <include name="getAdd"/>
+        </methods>
+      </class> <!-- com.ams.qa.admin.testcases.ManageCutOffTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

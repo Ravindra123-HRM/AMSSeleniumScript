@@ -1,0 +1,22 @@
+﻿var Ellipsis = function(control, limit) {
+    var content = control.html();
+    var tempElement = $(control)
+        .clone();
+
+    if (tempElement[0].style != undefined)
+        tempElement.hide();
+
+    tempElement.html("<div style='background-color: white; position: absolute; border: solid 2px black; cursor: pointer; margin-left: 15px;margin-right: 15px; padding: 5px; margin-top: -30px; width: 200px; overflow: auto; height: 50px;'>" + tempElement.html() + "</div>");
+    //control.after(tempElement);
+    var newContent = "";
+
+    if (content.length > limit || content.toLowerCase().indexOf('<br>') >= 0) {
+        newContent = content.toLowerCase().split('<br>')[0].substr(0, limit);
+        $(control).next().show();
+    } else {
+        newContent = content;
+        $(control).next().hide();
+    }
+
+    control.html(newContent);
+};
