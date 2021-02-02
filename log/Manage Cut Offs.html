@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://asdtest.internal.techmbs.in/Common/AMSNew/AttendanceCutoff.aspx -->
+<html><head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="-1"><link rel="stylesheet" href="./Manage Cut Offs_files/glyphicons-halflings-regular.woff2"><link rel="stylesheet" href="./Manage Cut Offs_files/glyphicons-halflings-regular.ttf"><link rel="stylesheet" href="./Manage Cut Offs_files/glyphicons-halflings-regular.eot"><link href="./Manage Cut Offs_files/bootstrap.css" rel="stylesheet"><link href="./Manage Cut Offs_files/ams.css" rel="stylesheet">
+    <script src="./Manage Cut Offs_files/jquery-1.11.4.js.download" type="text/javascript"></script>
+    <script src="./Manage Cut Offs_files/bootstrap.min.js.download"></script>
+
+    
+
+    <link href="./Manage Cut Offs_files/fullcalendar.min.css" rel="stylesheet">
+
+  
+
+    
+
+    
+    <script src="./Manage Cut Offs_files/moment.min.js.download"></script>
+
+
+
+    
+    <script src="./Manage Cut Offs_files/fullcalendar.min.js.download"></script>
+
+    
+    
+    <title>
+	Manage Cut Offs
+</title><link href="./Manage Cut Offs_files/Master.css" rel="stylesheet" type="text/css"><link href="./Manage Cut Offs_files/Menu.css" rel="stylesheet" type="text/css">
+
+    <script src="./Manage Cut Offs_files/date-functions.js.download" type="text/javascript"></script>
+    <script src="./Manage Cut Offs_files/datechooser.js.download" type="text/javascript"></script>
+    <script src="./Manage Cut Offs_files/Ellipsis.js.download" type="text/javascript"></script>
+    <script src="./Manage Cut Offs_files/DateValidation.js.download" type="text/javascript"></script>
+
+    
+
+    <script src="./Manage Cut Offs_files/jquery-3.2.1.js.download" type="text/javascript"></script>
+    <style type="text/css">
+        .tdLabel {
+            text-align: right;
+            width: 15%;
+        }
+
+        .bg-primary a:hover, a:focus {
+            color: #0094ff !important;
+            text-decoration: underline !important;
+        }
+
+        .tdColon {
+            text-align: center;
+            width: 5%;
+        }
+
+
+        .tdControls {
+            text-align: left;
+            width: 25%;
+        }
+
+        form input {
+            margin: 0px;
+        }
+
+        .tdtextCenter table td {
+            text-align: center;
+        }
+
+        #lblNo {
+            text-align: center;
+        }
+
+        .auto-style5 {
+            text-align: right;
+            width: 15%;
+            height: 29px;
+        }
+
+        .auto-style6 {
+            text-align: center;
+            width: 5%;
+            height: 29px;
+        }
+
+        .auto-style7 {
+            text-align: left;
+            width: 25%;
+            height: 29px;
+        }
+    </style>
+
+
+    <style type="text/css">
+        /*.dropdown-content1 {
+            padding: 0 15px 0 15px;
+        }
+
+        .p-left {
+            padding-left: 280px;
+        }
+
+        .mandatory {
+            color: red;
+            font-size: 18px;
+        }*/
+    </style>
+
+    <style>
+        .sidenav {
+            height: 100%;
+            width: 70px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 30px;
+            background-color: #444444;
+            overflow: hidden;
+        }
+
+            .sidenav a, dropdown-btn {
+                padding: 8px 8px 8px 8px;
+                text-decoration: none;
+                font-size: 14px;
+                color: #aaaaab;
+                display: block;
+                transition: 0.3s;
+                cursor: pointer;
+                font-weight: normal;
+            }
+
+                .sidenav a:hover {
+                    color: #43a047;
+                    /*text-decoration: underline!important;*/
+                }
+
+                .sidenav a label:hover {
+                    text-decoration: underline !important;
+                }
+
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+                margin-bottom: 20px;
+            }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+            color: #000;
+            margin-left: 70px;
+            height: 100%;
+        }
+
+        #tooglebtn {
+            margin-left: 10px;
+        }
+        /*.label{
+    display:none;
+}*/
+        .dropdown-container {
+            display: none;
+            background-color: #444444;
+            padding-left: 8px;
+        }
+
+        .sidenav label {
+            margin-left: 0px;
+        }
+
+        .menutext {
+            margin-top: 14px;
+        }
+        #roster-menu a{
+            display:block !important;
+        }
+    </style>
+
+    <script>
+
+
+
+
+        $(document).ready(function () {
+           
+           
+            $(".menutext").css("display", "none");
+
+
+            $("#tooglebtn").click(function () {
+
+                //  alert("The tooglebtn was clicked.");
+                $(".menutext").css("display", "inline-block");
+                $("#tooglebtn").css("display", "none");
+
+
+
+            });
+
+            $("#close").click(function () {
+                // alert("The closed was clicked.");
+                $(".menutext").css("display", "none");
+                $("#tooglebtn").css("display", "inline-block");
+                //$("#close").css("visibility", "hidden");
+                $("#main").css("margin-left", "70px");
+                $(".dropdown-container").css("display", "none");
+
+            });
+            $("#main").click(function () {
+                $("#mySidenav").css("overflow", "hidden");
+                $(".menutext").css("display", "none");
+                //  alert("The paragraph was clicked.");
+                $("#mySidenav").css("width", "70px");
+                //$("#close").css("visibility", "hidden");
+                $("#main").css("margin-left", "70px");
+                $("#close").css("display", "none");
+                $("#tooglebtn").css("display", "inline-block");
+
+                $(".dropdown-container").css("display", "none");
+            });
+            $("#menutext").click(function () {
+                $("#mySidenav").css("overflow", "hidden");
+                $(".menutext").css("display", "none");
+                //  alert("The paragraph was clicked.");
+                $("#mySidenav").css("width", "70px");
+                //$("#close").css("visibility", "hidden");
+                $("#main").css("margin-left", "70px");
+                $("#close").css("display", "none");
+                $("#tooglebtn").css("display", "inline-block");
+            });
+
+
+             
+
+        });
+
+        function openNav() {
+
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("mySidenav").style.overflow = "scroll";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("close").style.display = "block";
+            var elems = document.getElementsByTagName('menutext');
+            for (var i = 0; i < elems.length; i++) {
+                elems[i].style.visibility = "inline-block";
+            }
+            //    document.getElementsByTagName("menutext").style.visibility = "inline-block";
+            //document.getElementsByTagName("menutext").set;
+        }
+
+       
+
+/* 28-11-2019 */
+
+        function closealert() {
+
+
+            document.getElementById("mySidenav").style.width = "70px";
+
+
+
+
+            $(".menu-txt").hide();
+            $(".closebtn").hide();
+
+
+            document.getElementById("mySidenav").style.overflowY = "hidden";
+            document.getElementById("mySidenav").style.overflowX = "hidden";
+            document.getElementById("mySidenav").style.height = "100%";
+
+            $(".dropdown-content1").hide();
+            //$("#dropdown-menu1").mouseover(function () {
+
+            //    $("#admin-menu").hide();
+            //});
+            //$("#dropdown-menu1").mouseout(function () {
+            //    $("#admin-menu").hide();
+            //});
+
+            //$("#dropdown-menu2").mouseover(function () {
+
+            //    $("#user-management-menu").hide();
+            //});
+            //$("#dropdown-menu2").mouseout(function () {
+            //    $("#user-management-menu").hide();
+            //});
+
+
+            //$("#dropdown-menu3").mouseover(function () {
+
+            //    $("#roster-menu").hide();
+            //});
+            //$("#dropdown-menu3").mouseout(function () {
+            //    $("#roster-menu").hide();
+            //});
+        }
+        /* 28-11-2019 */
+
+        function closeNav() {
+            //alert("closeNav");
+            document.getElementById("mySidenav").style.overflow = "hidden";
+            document.getElementById("mySidenav").style.height = "100%";
+            document.getElementById("mySidenav").style.width = "70px";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("close").style.display = "none";
+            var elems = document.getElementsByTagName('menutext');
+            for (var i = 0; i < elems.length; i++) {
+                elems[i].style.visibility = "none";
+            }
+            //   document.getElementsByTagName("menutext").style.display = "none";
+        }
+        function ValidateSession() {
+            //debugger;
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Login.aspx/ValidateSession",
+                data: "{}",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d == 'No') {
+                        alert("Session expired.You will be redirected to home page!!");
+                        window.location = "Default.aspx";
+                    }
+                },
+                error: function (result) {
+                    alert(result.result);
+                }
+            });
+
+        }
+
+        //--------------sunita 29012019 for ceag -----------------------------////////////////////
+
+        function ValidateSession1() {
+
+
+            alert("This Page is not accessible for CEAG Login!!");
+            window.location = "Default.aspx";
+
+
+        }
+         //--------------sunita 29012019 for ceag -----------------------------////////////////////
+
+    </script>
+
+
+
+</head>
+<body id="fullBody" style="">
+    <form name="aspnetForm" method="post" action="https://asdtest.internal.techmbs.in/Common/AMSNew/AttendanceCutoff.aspx" id="aspnetForm" enctype="multipart/form-data">
+<div>
+<input type="hidden" name="ctl00_ToolkitScriptManager1_HiddenField" id="ctl00_ToolkitScriptManager1_HiddenField" value=";;AjaxControlToolkit, Version=4.1.60919.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e:en-GB:ab75ae50-1505-49da-acca-8b96b908cb1a:f2c8e708:de1feab2:720a52bf:f9cec9bc:589eaa30:a67c2700:ab09e3fe:87104b7c:8613aea7:3202a5a2:be6fb298">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./Manage Cut Offs_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./Manage Cut Offs_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./Manage Cut Offs_files/ScriptResource(1).axd" type="text/javascript"></script>
+<script src="./Manage Cut Offs_files/AttendanceCutoff.aspx" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="291A2D41">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="0qGL/ZHWs/hPBjjLCPn3ahMJf+mBJojiDJ13qV7bj6LNd/jukWwErdiDSrwS6MAHRisPUembnhIEvjuMOW/2ua69djrLs1q577y9fcuwK+1ulHGb+8R4P9YIX/kVR+qf+IsFvnHyE8Llm0DAAPmTHWQYwjfXMikxH3XNYlqxvGZpqGOS0PEOdpa365CMnPE2GMaUETVCmftc8RR2lwkjCV/9+w0STS66YDR5f3J2Ajdo8oxeS4h15jIlLGc1fQCBszFvFTHNmPKK/ARILn0TDGvpKjBaiQi6qMk/BBT95ZWsfxcNYb54o9939L3qDHYcoabVaAzdoatW4y8OrAMRKK9XIt4YZpJ+RWr1Vhv/yDJgKlwdM/GIxhrcsURHN3gA7R4yLXn9/IHYAOtOY9LcplgCYzMmITgTSQkuWpocAf8GtosvS4+1WagjsQq4EE9Bi1yXzUNep86Rb4bm3FXUu6tRhVfpHrkXLxMzka04M3Ltp8tA8iIBJoh2gfiZ13ZknpCzSxJpPnAIhCmuBJLUMEbXYoUtdtsnj6Z9Apg/K8ByU+wTs7eVvDDEOrmnQfKmeRLxZ2Am1MXY5y/WWvzZrYq7F66GXBli5sH0UXFNls8MrXnHa7ngOX+pRc0D8v7ZnHTgQ81OoabsPjpHU+VDLDOQyaEwXGmZUWiXzfKZE4MRLtNCRkJatewE9XVmjMaBs+k8VDf1sLQsK/rXCwUYYODdokyqqYT0pxr6Xlx9dHPJ8wRY8CNh8hzpy2CQp4+chhyEjitH3k/eFlvJ9kWSVMEX6A7qx2gt7o3Qk8kv0XRRnwnelcU7LQe8Uk0rRJ6hRMBtucVPH7Z6j2k3DsmK+oyCmAhlKDEtNe6TLsdIf+0nZrwwo3eO/tFGVl9dl+jlxxSGm/eh52nFSGZxp/bWFlLzLa30NQnriTRSl2NKtxbHvLpDAJOD9YSwaTfdXryN8KIGqwJ7pz1YrsX8O5vOa8oY3/K7jX2lx9ydFFHPxypWmAw9cAegZdTX+Z32e0grHrBk0BAuzAvZU7WmZrUiVDjAIgXa/Tt/DGT7LueK5v37BsN8EvmbV12nv+9VVxtbAqF6/s19eFIMBQiRFn4wnbcvrR5e0Aem76WleKMk1FUfRNsCMUWVuSuKZR7FFcOto9ZmS6y5q6tJe0KtjvqzJNUh3ToDtzAz7t3YVaFR/J61H9uA">
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ToolkitScriptManager1', 'aspnetForm', ['tctl00$UpdatePanelProgress','','tctl00$UpdatePanelMain',''], [], [], 36000, 'ctl00');
+//]]>
+</script>
+
+
+
+        <div id="mySidenav" class="sidenav">
+            <span id="tooglebtn" style="font-size: 30px; color: #fff; cursor: pointer" onclick="openNav()">☰ </span>
+            <a id="close" style="display: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+
+            <div id="ctl00_liAttendance" title="Employee Attendance">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/Default.aspx" id="ctl00_self">
+                    <div class="menu-attendace-icon menu-list-icons"></div>
+                    <div class=" menutext" style="display: none;">Attendance</div>
+                </a>
+            </div>
+
+            <div id="ctl00_liTentativeAttendance" title="Tentative Attendance">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/TentativeAttendance.aspx" id="ctl00_A1">
+                    <div class="menu-attendace-icon menu-list-icons"></div>
+                    <div class=" menutext" style="display: none;">Tentative Attendance</div>
+                </a>
+            </div>
+            <div id="ctl00_liUserManagement" style="cursor: pointer" title="User Management" onclick="openNav()">
+
+                <a class="dropdown-btn ">
+                    <div class="menu-user_management-icon menu-list-icons"></div>
+                    <div class="menutext" style="display: none;">User Management &nbsp; <span class=" fa fa-arrow-down" aria-hidden="true"></span></div>
+                </a>
+
+                <div class="dropdown-container" id="user-management-menu">
+                    <div class="clear"></div>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/AssignGroup.aspx" id="ctl00_liAssignGroup" class="menutext" title="Manage Roles" style="display: none;">Manage Roles</a><br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/AssignRoles.aspx" id="ctl00_liAssignRoles" class="menutext" title="Assign Roles" style="display: none;">Assign Roles</a><br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/AssignRights.aspx" id="ctl00_liAssignRights" class="menutext" title="Assign Cost Centre" style="display: none;">Assign Cost Centre</a><br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/AssignEscalationHandler.aspx" id="ctl00_liAssignEscalationHandler" class="menutext" title="Assign Sub Departments to Manage Escalations" style="display: none;">Assign Sub Departments to Manage Escalations</a><br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/AssignReports.aspx" id="ctl00_liAssignReports" title="Assign Reports">Assign Reports</a>
+                </div>
+
+
+            </div>
+
+            <div id="ctl00_liIAccessMapping" style="cursor: pointer" title="IAccess Mapping" onclick="openNav()">
+
+                <a class="dropdown-btn">
+                    <div class="menu-user_management-icon menu-list-icons"></div>
+                    <div class=" menutext" style="display: none;">IAccess Mapping &nbsp; <span class=" fa fa-arrow-down" aria-hidden="true"></span></div>
+                </a>
+
+                <div class="dropdown-container" id="iaccess-mapping-menu">
+                    <div class="clear"></div>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/MappedGroupMaster.aspx" id="ctl00_liMappedGroupMaster" class="menutext" title="Mapped Group Master" style="display: none;">Mapped Group Master</a><br>
+                    
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/MappedDepartmentMaster.aspx" id="ctl00_liMappedDepartmentMaster" class="menutext" title="Mapped Department Master" style="display: none;">Mapped Department Master</a><br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/MappedSubDepartmentMaster.aspx" id="ctl00_liMappedSubDepartmentMaster" class="menutext" title="Mapped Sub Department Master" style="display: none;">Mapped Sub Department Master</a><br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/AMSLMSviewmapping.aspx" id="ctl00_liamslmsview" class="menutext" title="AMS Mapping Upload" style="display: none;">AMS Mapping Upload</a>
+                </div>
+
+
+            </div>
+
+
+            <div id="ctl00_liAdmin" style="cursor: pointer" title="Admin" onclick="openNav()">
+
+                <a class="dropdown-btn ">
+                    <div class="menu-admin-icon menu-list-icons"></div>
+                    <div class="menutext" title="Admin" style="display: none;">Admin &nbsp; <span class="fa fa-arrow-down" aria-hidden="true"></span></div>
+                </a>
+
+                <div class="dropdown-container" id="admin-menu">
+                    
+                    <br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/ConfigureWorkingHours.aspx" id="ctl00_liConfigureWorkingHours" class="menutext" title="Configure Working Hours" style="display: none;">Configure Working Hours </a>
+                    <br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/ManageShiftType.aspx" id="ctl00_liShiftType" class="menutext" title="Manage Shift Type" style="display: none;">Manage Shift Type</a><br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/ManageShiftCode.aspx" id="ctl00_liShiftCode" class="menutext" title="Manage Shift Code" style="display: none;">Manage Shift Code</a><br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/SourceConfiguration.aspx" id="ctl00_liSourceConfiguration" class="menutext" title="Manage Attendance Source" style="display: none;">Manage Attendance Source </a>
+                    <br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/AttendanceCutoff.aspx" id="ctl00_liAttendanceCutoff" class="menutext" title="Manage Cut Off" style="display: none;">Manage Cut Off</a><br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/ManageAttendance.aspx" id="ctl00_liManageRegularizaton" class="menutext" title="Manage Regularizaton" style="display: none;">Manage Regularizaton </a>
+                    <br>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/SwapConfiguration.aspx" id="ctl00_liSwapConfiguration" class="menutext" title="Swap Configuration" style="display: none;">Swap Configuration</a>
+                </div>
+
+            </div>
+
+            <div id="ctl00_liRoster" style="cursor: pointer" title="Roster">
+
+                <a class="dropdown-btn ">
+                    <div class="menu-ama-icon menu-list-icons"></div>
+                    <div class="menutext" style="display: none;">Roster &nbsp; <span class="fa fa-arrow-down" aria-hidden="true"></span></div>
+                </a>
+
+                <div class="dropdown-container" id="roster-menu">
+                    <div class="clear"></div>
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/RosterViewRevise.aspx" id="ctl00_liRosterView" class="menutext" title="Roster View" style="display: none;">Roster View</a>
+                  
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/RosterUpload.aspx" id="ctl00_liRosterUpload" class="menutext" title="Roster Upload" style="display: none;">Roster Upload</a>
+                   
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/RosterDelete_new.aspx" id="ctl00_liRosterDelete" class="menutext" title="Roster Delete" style="display: none;">Roster Delete</a>
+                    
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/RosterRule.aspx" id="ctl00_liRosterRule" class="menutext" title="Roster Rule" style="display: none;">Roster Rule</a>
+                   
+                    <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/SwapMain.aspx" id="ctl00_liSwapModule" class="menutext" title="Swap Module" style="display: none;">Swap Module</a>
+                    
+                    
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div id="ctl00_liDelegation" title="Delegation">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/Delegation.aspx" id="ctl00_Delegate">
+                    <div class="menu-delegate-icon menu-list-icons"></div>
+                    <div class=" menutext" style="display: none;">Delegation</div>
+                </a>
+            </div>
+
+            <div id="ctl00_liFallBack" title="FallBack">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/FallBack.aspx" id="ctl00_Fallback">
+                    <div class="menu-fallback-icon menu-list-icons"></div>
+                    <div class=" menutext" style="display: none;">FallBack</div>
+                </a>
+            </div>
+
+
+
+            <div id="ctl00_liAttendanceJobReRun" title="Attendance Job Re-Run">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/AttendanceJobReRun.aspx" id="ctl00_AttendanceJobReRun">
+                    <div class="menu-attendance_run-icon menu-list-icons"></div>
+                    <div class=" menutext" style="display: none;">Attendance Job Re-Run</div>
+                </a>
+            </div>
+
+            <div id="ctl00_liEscallation" title="Escalation">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/EscalationApproval.aspx" id="ctl00_escallation">
+                    <div class="menu-escalation-icon menu-list-icons"></div>
+                    <div class="menutext" style="display: none;">Escalation</div>
+                </a>
+            </div>
+
+            
+
+
+            <div id="ctl00_liLOPReversal" title="LWP Reversal">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/LWPReversal.aspx">
+                    <div class="menu-LWP-rev-admin-icon menu-list-icons"></div>
+                    <div class=" menutext" style="display: none;">LWP Reversal</div>
+                </a>
+            </div>
+
+            <div id="ctl00_liLwpAdmin" title="LWP Reversal Admin">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/LwpAdmin.aspx">
+                    <div class="menu-lwp-icon menu-list-icons"></div>
+                    <div class=" menutext" style="display: none;">LWP Reversal Admin</div>
+                </a>
+            </div>
+
+            
+
+            <div id="ctl00_liHRAttManage" title="Manage Attendance">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/HRAudit.aspx">
+                    <div class="menu-manage-attendance-icon menu-list-icons"></div>
+                    <div class=" menutext" style="display: none;">Manage Attendance</div>
+                </a>
+            </div>
+            <div class="clear"></div>
+            
+
+            <div id="ctl00_liAuditDashboard" title="Audit Dashboard">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/AuditDashboard.aspx">
+                    <div class="menu-audit-dashboard-icon menu-list-icons"></div>
+                    <div class=" menutext" style="display: none;">Audit Dashboard</div>
+                </a>
+            </div>
+
+
+
+            <div id="ctl00_liAMAReport" title="AMA Report">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/iAccessCNBIntegration.aspx" id="ctl00_AMA">
+                    <div class="menu-Attendance_history-icon menu-list-icons"></div>
+                    <div class="menutext" style="display: none;">AMA Report</div>
+                </a>
+            </div>
+
+            <div id="ctl00_liAMSReports" title="AMS Report">
+                <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/AMSLMSReport.aspx" id="ctl00_A2">
+                    <div class="menu-Attendance_history-icon menu-list-icons"></div>
+                    <div class=" menutext" style="display: none;">AMS Report</div>
+                </a>
+            </div>
+            <div class="clear-10"></div>
+
+
+
+        </div>
+
+        <div id="main">
+            <header>
+                <div id="container" class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <a href="https://asdtest.internal.techmbs.in/Common/AMSNew/Default.aspx">
+                                <img src="./Manage Cut Offs_files/AMS_LOGO.png" class="img-responsive logo-img" style="margin-top: 1%; margin-bottom: 1%;"></a>
+                            <div class="clear-10"></div>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <div class="clear-20"></div>
+                            <div class="clear-20"></div>
+
+                            
+                                <a href="https://asdtest.internal.techmbs.in/Common/LMS/" target="_blank" style="color: white; font-size: medium; margin-left: -120px;"><b>Switch To LMS</b></a>
+
+
+                        </div>
+                        
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+
+                            <div class="media">
+                                <div class="media-body text-right">
+                                    <h5><span id="welcomename">
+                                        <span id="ctl00_lblWelcomeUser">Gaurav Pal (73859)</span>
+                                        <div class="clear-10"></div>
+                                        
+                                        |  
+                                        <span id="ctl00_lblDept">Automation &amp; Software Development</span>
+
+                                    </span></h5>
+
+                                </div>
+                                <div class="media-right">
+                                    <img src="./Manage Cut Offs_files/img_avatar1.png" id="ctl00_imgProlfile" class="media-object img-circle" style="width: 55px">
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="clear-10"></div>
+                    </div>
+                </div>
+            </header>
+
+
+            <div id="fluid" class="container-fluid">
+               
+                <div id="ctl00_UpdatePanelProgress">
+	
+                        
+                        <div id="ctl00_UpdateProgress2" style="visibility: hidden; display: none; position: fixed; z-index: 100001;" role="status" aria-hidden="true">
+		
+                                <div style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999;">
+                                    <img id="ctl00_imgUpdateProgress" title="Loading ..." src="./Manage Cut Offs_files/ajaxloader.gif" alt="Loading ..." style="border-width:0px;padding: 10px; position: fixed; z-index: 9999999; top: 45%; left: 45%; opacity: 1;">
+                                </div>
+                            
+	</div>
+                        
+                    
+<div id="ctl00_modalPopup_backgroundElement" class="modalPopup-trans-bg" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000;"></div></div>
+
+                <div id="ctl00_UpdatePanelMain">
+	
+                           
+
+    
+    <div id="ctl00_MainContent_divlbl1" class="col-md-6">
+        <h3>
+            <span id="ctl00_MainContent_lblAttendanceCutoff">Manage Cut Offs</span>
+        </h3>
+    </div>
+    
+    <div class="clear-10">
+    </div>
+    <div class="row border-panel">
+
+        <div class="col-md-3 col-sm-3 ">
+            <div class="form-group">
+                <label id="lblCostCentre">
+                    Cost Centre <span class="mandatory">*</span> :
+                </label>
+
+                <select name="ctl00$MainContent$ddlCostCentre" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$ddlCostCentre\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlCostCentre" class="form-control">
+		<option value="0">-- Select --</option>
+		<option value="1">Joint</option>
+		<option selected="selected" value="2">Australia</option>
+		<option value="3">Ireland</option>
+		<option value="4">New_Zealand</option>
+		<option value="5">Relish</option>
+		<option value="6">UK</option>
+		<option value="7">UK _Waterford</option>
+
+	</select>
+              
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="form-group">
+                <label id="Label2">
+                    Cut-Off Type <span class="mandatory">*</span> :
+                </label>
+
+                <select name="ctl00$MainContent$ddlCutoffType" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$ddlCutoffType\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlCutoffType" class="form-control">
+		<option value="0">-- Select --</option>
+		<option value="4">Esc days</option>
+		<option value="6">AttnCutOff</option>
+		<option value="7">HR SLA - Esc</option>
+		<option value="9">AttnCutOffAction</option>
+		<option selected="selected" value="11">Refresh Attendance</option>
+		<option value="15">Regularization Approval Level</option>
+		<option value="16">RegProcessCutOff</option>
+
+	</select>
+            </div>
+        </div>
+        <div class="col-md-3 ">
+            <div class="form-group">
+                <label id="lblCTNCT">
+                    CT/NCT <span class="mandatory">*</span> :
+                </label>
+                <select name="ctl00$MainContent$ddlCTNCT" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$ddlCTNCT\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlCTNCT" class="form-control">
+		<option selected="selected" value="0">-- Select --</option>
+		<option value="1">CT</option>
+		<option value="2">NCT</option>
+
+	</select>
+            </div>
+        </div>
+        <div id="ctl00_MainContent_dvform1">
+            <div class="col-md-3 col-sm-3">
+                <div class="form-group">
+                    <label id="lblType">
+                        Type <span class="mandatory">*</span> :
+                    </label>
+                    <div class="clear-5"></div>
+                    <input id="ctl00_MainContent_rbCount" type="radio" name="ctl00$MainContent$rblist" value="1" checked="checked"><label for="ctl00_MainContent_rbCount">No. of Days</label>
+                    <span disabled="disabled"><input id="ctl00_MainContent_rbDate" type="radio" name="ctl00$MainContent$rblist" value="2" disabled="disabled"><label for="ctl00_MainContent_rbDate">Date</label></span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <div class="form-group">
+                    <label id="lblNo">
+                        No. of Days/Date <span class="mandatory">*</span> :
+                    </label>
+
+                    <input name="ctl00$MainContent$txtNo" type="text" maxlength="2" id="txtNo" class="form-control" placeholder="Enter No. of Days/Date " onkeypress="validateRegex_test(event)">
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="clear-10">
+        </div>
+
+        <div class="col-md-3  col-sm-3">
+            <input type="submit" name="ctl00$MainContent$btnSave" value="Save" onclick="return Validation();" id="ctl00_MainContent_btnSave" class="btn  btn-large btn-primary">
+            
+            <input type="submit" name="ctl00$MainContent$btnReset" value="Reset" id="ctl00_MainContent_btnReset" class="btn  btn-large btn-primary">
+        </div>
+        <div class="clear-20">
+        </div>
+    </div>
+
+    <div class="clear-20">
+    </div>
+
+
+    <div id="divGrid" class="tdtextCenter">
+        <div>
+		<table class="table table-bordered table-condensed" cellspacing="0" rules="all" border="1" id="ctl00_MainContent_gvattendance" style="width:100%;border-collapse:collapse;">
+			<tbody><tr class="bg-primary">
+				<th class="bg-primary" scope="col" style="color:White;">Cost Centre</th><th class="bg-primary" scope="col" style="color:White;">Cut-Off Type</th><th class="bg-primary" scope="col" style="color:White;">CT/NCT</th><th class="bg-primary" scope="col" style="color:White;">Type</th><th class="bg-primary" scope="col" style="color:White;">No. of Days/Date</th><th class="bg-primary" scope="col" style="color:White;">Added By</th><th class="bg-primary" scope="col" style="color:White;">Added When</th><th class="bg-primary" scope="col" style="color:White;">Modified By</th><th class="bg-primary" scope="col" style="color:White;">Modified When</th><th class="bg-primary" scope="col" style="color:White;">IsActive</th><th class="bg-primary" scope="col" style="color:White;">Action</th>
+			</tr><tr>
+				<td>
+                        <span id="ctl00_MainContent_gvattendance_ctl02_lblcostcenter">Australia</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl02_lblAction">Refresh Attendance</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl02_lblCTNCT">CT</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl02_lbltype">Days</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl02_lblsourceID">22</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl02_lblAddedBy">Gaurav Pal (73859) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl02_lblAddedWhen">02/02/2021 18:03:59</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl02_lblModifiedBy"></span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl02_lblModifiedWhen"></span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl02_lblIsActive">Yes</span>
+                    </td><td>
+                        <a id="ctl00_MainContent_gvattendance_ctl02_lbledit" class="fa fa-edit" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl02$lbledit&#39;,&#39;&#39;)"></a>
+                        
+                                 
+                        <a onclick="return confirm(&#39;Are you sure you want to deactivate this configuration?&#39;);" id="ctl00_MainContent_gvattendance_ctl02_lblinactive" class="fa fa-trash" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl02$lblinactive&#39;,&#39;&#39;)"></a>
+                        
+                    </td>
+			</tr><tr>
+				<td>
+                        <span id="ctl00_MainContent_gvattendance_ctl03_lblcostcenter">Australia</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl03_lblAction">Refresh Attendance</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl03_lblCTNCT">NCT</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl03_lbltype">Days</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl03_lblsourceID">5</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl03_lblAddedBy">Gaurav Pal (73859) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl03_lblAddedWhen">02/02/2021 17:55:19</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl03_lblModifiedBy">Gaurav Pal (73859) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl03_lblModifiedWhen">02/02/2021 18:03:13</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl03_lblIsActive">No</span>
+                    </td><td>
+                        <a id="ctl00_MainContent_gvattendance_ctl03_lbledit" class="fa fa-edit" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl03$lbledit&#39;,&#39;&#39;)"></a>
+                        
+                                 <a onclick="return confirm(&#39;Are you sure you want to activate this configuration?&#39;);" id="ctl00_MainContent_gvattendance_ctl03_lblactive" class="fa fa-check" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl03$lblactive&#39;,&#39;&#39;)"></a>
+                        
+                        
+                    </td>
+			</tr><tr>
+				<td>
+                        <span id="ctl00_MainContent_gvattendance_ctl04_lblcostcenter">Australia</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl04_lblAction">AttnCutOff</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl04_lblCTNCT">NCT</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl04_lbltype">Days</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl04_lblsourceID">40</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl04_lblAddedBy">Gaurav Pal (73859) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl04_lblAddedWhen">02/02/2021 17:53:50</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl04_lblModifiedBy">Gaurav Pal (73859) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl04_lblModifiedWhen">02/02/2021 18:03:06</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl04_lblIsActive">No</span>
+                    </td><td>
+                        <a id="ctl00_MainContent_gvattendance_ctl04_lbledit" class="fa fa-edit" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl04$lbledit&#39;,&#39;&#39;)"></a>
+                        
+                                 <a onclick="return confirm(&#39;Are you sure you want to activate this configuration?&#39;);" id="ctl00_MainContent_gvattendance_ctl04_lblactive" class="fa fa-check" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl04$lblactive&#39;,&#39;&#39;)"></a>
+                        
+                        
+                    </td>
+			</tr><tr>
+				<td>
+                        <span id="ctl00_MainContent_gvattendance_ctl05_lblcostcenter">Joint</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl05_lblAction">HR SLA - Esc</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl05_lblCTNCT">CT</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl05_lbltype">Days</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl05_lblsourceID">40</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl05_lblAddedBy">Sagar Bhosle (52136) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl05_lblAddedWhen">18/02/2020 20:55:40</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl05_lblModifiedBy">Siddhesh Nadankar (103773) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl05_lblModifiedWhen">28/01/2021 20:03:50</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl05_lblIsActive">Yes</span>
+                    </td><td>
+                        <a id="ctl00_MainContent_gvattendance_ctl05_lbledit" class="fa fa-edit" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl05$lbledit&#39;,&#39;&#39;)"></a>
+                        
+                                 
+                        <a onclick="return confirm(&#39;Are you sure you want to deactivate this configuration?&#39;);" id="ctl00_MainContent_gvattendance_ctl05_lblinactive" class="fa fa-trash" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl05$lblinactive&#39;,&#39;&#39;)"></a>
+                        
+                    </td>
+			</tr><tr>
+				<td>
+                        <span id="ctl00_MainContent_gvattendance_ctl06_lblcostcenter">Joint</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl06_lblAction">HR SLA - Esc</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl06_lblCTNCT">NCT</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl06_lbltype">Days</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl06_lblsourceID">40</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl06_lblAddedBy">Sagar Bhosle (52136) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl06_lblAddedWhen">18/02/2020 20:56:00</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl06_lblModifiedBy">Siddhesh Nadankar (103773) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl06_lblModifiedWhen">28/01/2021 20:03:31</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl06_lblIsActive">Yes</span>
+                    </td><td>
+                        <a id="ctl00_MainContent_gvattendance_ctl06_lbledit" class="fa fa-edit" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl06$lbledit&#39;,&#39;&#39;)"></a>
+                        
+                                 
+                        <a onclick="return confirm(&#39;Are you sure you want to deactivate this configuration?&#39;);" id="ctl00_MainContent_gvattendance_ctl06_lblinactive" class="fa fa-trash" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl06$lblinactive&#39;,&#39;&#39;)"></a>
+                        
+                    </td>
+			</tr><tr>
+				<td>
+                        <span id="ctl00_MainContent_gvattendance_ctl07_lblcostcenter">Joint</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl07_lblAction">RegProcessCutOff</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl07_lblCTNCT">NCT</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl07_lbltype">Days</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl07_lblsourceID">70</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl07_lblAddedBy">Sagar Bhosle (52136) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl07_lblAddedWhen">18/02/2020 21:01:09</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl07_lblModifiedBy">Shreya Sawant (65991) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl07_lblModifiedWhen">27/01/2021 18:50:16</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl07_lblIsActive">Yes</span>
+                    </td><td>
+                        <a id="ctl00_MainContent_gvattendance_ctl07_lbledit" class="fa fa-edit" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl07$lbledit&#39;,&#39;&#39;)"></a>
+                        
+                                 
+                        <a onclick="return confirm(&#39;Are you sure you want to deactivate this configuration?&#39;);" id="ctl00_MainContent_gvattendance_ctl07_lblinactive" class="fa fa-trash" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl07$lblinactive&#39;,&#39;&#39;)"></a>
+                        
+                    </td>
+			</tr><tr>
+				<td>
+                        <span id="ctl00_MainContent_gvattendance_ctl08_lblcostcenter">Joint</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl08_lblAction">RegProcessCutOff</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl08_lblCTNCT">CT</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl08_lbltype">Days</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl08_lblsourceID">60</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl08_lblAddedBy">Sagar Bhosle (52136) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl08_lblAddedWhen">18/02/2020 21:00:48</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl08_lblModifiedBy"></span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl08_lblModifiedWhen"></span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl08_lblIsActive">Yes</span>
+                    </td><td>
+                        <a id="ctl00_MainContent_gvattendance_ctl08_lbledit" class="fa fa-edit" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl08$lbledit&#39;,&#39;&#39;)"></a>
+                        
+                                 
+                        <a onclick="return confirm(&#39;Are you sure you want to deactivate this configuration?&#39;);" id="ctl00_MainContent_gvattendance_ctl08_lblinactive" class="fa fa-trash" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl08$lblinactive&#39;,&#39;&#39;)"></a>
+                        
+                    </td>
+			</tr><tr>
+				<td>
+                        <span id="ctl00_MainContent_gvattendance_ctl09_lblcostcenter">Joint</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl09_lblAction">Refresh Attendance</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl09_lblCTNCT">NCT</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl09_lbltype">Days</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl09_lblsourceID">60</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl09_lblAddedBy">Sagar Bhosle (52136) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl09_lblAddedWhen">18/02/2020 20:59:19</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl09_lblModifiedBy"></span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl09_lblModifiedWhen"></span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl09_lblIsActive">Yes</span>
+                    </td><td>
+                        <a id="ctl00_MainContent_gvattendance_ctl09_lbledit" class="fa fa-edit" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl09$lbledit&#39;,&#39;&#39;)"></a>
+                        
+                                 
+                        <a onclick="return confirm(&#39;Are you sure you want to deactivate this configuration?&#39;);" id="ctl00_MainContent_gvattendance_ctl09_lblinactive" class="fa fa-trash" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl09$lblinactive&#39;,&#39;&#39;)"></a>
+                        
+                    </td>
+			</tr><tr>
+				<td>
+                        <span id="ctl00_MainContent_gvattendance_ctl10_lblcostcenter">Joint</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl10_lblAction">Refresh Attendance</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl10_lblCTNCT">CT</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl10_lbltype">Days</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl10_lblsourceID">60</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl10_lblAddedBy">Sagar Bhosle (52136) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl10_lblAddedWhen">18/02/2020 20:58:09</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl10_lblModifiedBy"></span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl10_lblModifiedWhen"></span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl10_lblIsActive">Yes</span>
+                    </td><td>
+                        <a id="ctl00_MainContent_gvattendance_ctl10_lbledit" class="fa fa-edit" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl10$lbledit&#39;,&#39;&#39;)"></a>
+                        
+                                 
+                        <a onclick="return confirm(&#39;Are you sure you want to deactivate this configuration?&#39;);" id="ctl00_MainContent_gvattendance_ctl10_lblinactive" class="fa fa-trash" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl10$lblinactive&#39;,&#39;&#39;)"></a>
+                        
+                    </td>
+			</tr><tr>
+				<td>
+                        <span id="ctl00_MainContent_gvattendance_ctl11_lblcostcenter">Joint</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl11_lblAction">AttnCutOffAction</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl11_lblCTNCT">NCT</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl11_lbltype">Days</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl11_lblsourceID">60</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl11_lblAddedBy">Sagar Bhosle (52136) </span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl11_lblAddedWhen">18/02/2020 20:57:37</span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl11_lblModifiedBy"></span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl11_lblModifiedWhen"></span>
+                    </td><td>
+                        <span id="ctl00_MainContent_gvattendance_ctl11_lblIsActive">Yes</span>
+                    </td><td>
+                        <a id="ctl00_MainContent_gvattendance_ctl11_lbledit" class="fa fa-edit" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl11$lbledit&#39;,&#39;&#39;)"></a>
+                        
+                                 
+                        <a onclick="return confirm(&#39;Are you sure you want to deactivate this configuration?&#39;);" id="ctl00_MainContent_gvattendance_ctl11_lblinactive" class="fa fa-trash" href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance$ctl11$lblinactive&#39;,&#39;&#39;)"></a>
+                        
+                    </td>
+			</tr><tr class="pag">
+				<td colspan="11"><table border="0">
+					<tbody><tr>
+						<td><span>1</span></td><td><a href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance&#39;,&#39;Page$2&#39;)">2</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance&#39;,&#39;Page$3&#39;)">3</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$MainContent$gvattendance&#39;,&#39;Page$4&#39;)">4</a></td>
+					</tr>
+				</tbody></table></td>
+			</tr>
+		</tbody></table>
+	</div>
+    </div>
+
+    <div class="clear-10">
+    </div>
+    <div id="divGrid1" class="tdtextCenter">
+        
+    </div>
+    <div class="clear-10">
+    </div>
+
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var regex_numbersOnly = /^[0-9]*$/;
+
+            $('.numbersOnly').on("keypress", function (e) {
+                validateRegex(regex_numbersOnly, e);
+                validatelevel();
+            });
+            $('.numbersOnly').on("paste", function (e) {
+                validateRegxOnPaste(regex_numbersOnly, e);
+                validatelevel();
+            });
+
+            function validateRegex(regex, event) {
+
+                var key = String.fromCharCode(event.charCode == event.which ? event.which : event.charCode);
+                if (!regex.test(key)) {
+                    event.preventDefault();
+                    return false;
+                }
+            }
+
+        });
+
+        function validateRegex_test(event) {
+            var regex = /^[0-9]*$/;
+            var key = String.fromCharCode(event.charCode == event.which ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        }
+
+
+
+        function validateRegxOnPaste(regex, obj) {
+
+            var text = window.clipboardData.getData('Text');
+            if (text) {
+                var validtext = "";
+                var lower = text.toLowerCase();
+                var upper = text.toUpperCase();
+                var result = "";
+                for (var i = 0; i < lower.length; ++i) {
+                    if (isValid(text[i], regex)) {
+                        result += text[i];
+                    }
+                }
+                var maxlength = $(obj)[0].target.maxLength;
+                window.clipboardData.clearData("Text");
+                var a = result.slice(0, maxlength);
+                window.clipboardData.setData("Text", a);
+            }
+            else {
+                return ''
+            }
+        }
+        function isValid(text, regex) {
+            if (text) {
+                return regex.test(text);
+            }
+            return false;
+        }
+
+        function Validation() {
+            //debugger;
+            if ($('#ddlCutoffType').val() == 15) {
+                var hdnNoLevels = $("[id$='hdnNoLevels']").val().toLowerCase();
+
+                if ($('#ddlCostCentre').val() == 0) {
+                    alert('Please Select Cost Centre');
+                    return false;
+                }
+                if ($('#ddlCutoffType').val() == 0) {
+                    alert('Please Select Cut-Off Type');
+                    return false;
+                }
+                if ($('#ddlCTNCT').val() == 0) {
+                    alert('Please Select CTNCT');
+                    return false;
+                }
+
+                if ($("#ctl00_MainContent_txttotal").val() == 0) {
+                    alert('Please enter value in Total SLA');
+                    return false;
+                }
+
+                if ($("#txtlevel1").val() == 0) {
+                    alert('Please enter value in level 1');
+                    return false;
+                }
+                
+            }
+            else {
+                if ($('#ddlCostCentre').val() == 0) {
+                    alert('Please Select Cost Centre');
+                    return false;
+                }
+                if ($('#ddlCutoffType').val() == 0) {
+                    alert('Please Select Cut-off Type');
+                    return false;
+                }
+                if ($('#ddlCTNCT').val() == 0) {
+                    alert('Please Select CTNCT');
+                    return false;
+                }
+
+                if (($("#ctl00_MainContent_rbCount")[0].checked == false) && ($("#ctl00_MainContent_rbDate")[0].checked == false)) {
+                    alert('Please Select Type');
+                    return false;
+                }
+                if ($("#txtNo").val() == 0) {
+                    alert('No. of Days/Date Cannot be 0');
+                    return false;
+                }
+
+                var x = ($("#txtNo")).val();
+
+
+                if ($("#ctl00_MainContent_rbDate")[0].checked == true) {
+                    if (x != null) {
+                        if (x < 1 || x > 31) {
+                            alert("Please Select No. of Days between 1 to 31");
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return validatelevel();
+
+            //if (IsSave == 'false') {
+
+            //        return validatelevel();
+
+            //        //validatelevel1();
+
+            //    }
+
+
+        }
+
+        function validatelevel() {
+
+           // debugger;
+            var hdnNoLevels = $("[id$='hdnNoLevels']").val().toLowerCase();
+            if ($('#ddlCutoffType').val() == 15) {
+
+                var select = ($("#ddlselect")).val();
+                var total = ($("#ctl00_MainContent_txttotal")).val(); 
+                if (select == "1" || hdnNoLevels == "1") {
+                    ($("#txtlevel1")).val(total);
+                    document.getElementById('txtlevel1').disabled = 'false';
+                }
+                if ($('#ddlselect').val() == "2" || hdnNoLevels == "2") {
+                    if (total != "") {
+                       // document.getElementById('txtlevel1').disabled = 'true';
+                        $('.txtlevel1').prop("disabled", false);
+                    }
+
+                    if (($("#ctl00_MainContent_txttotal")).val() != 0) {
+                        return validatelevel1();
+                    }
+               
+                }
+
+            }
+
+        }
+
+
+
+        function validatelevel1() {
+            if ($('#ddlCutoffType').val() == 15) {
+                var total = $("#ctl00_MainContent_txttotal").val();
+                var total1 = parseInt(total);
+                var level1 = $("#txtlevel1").val();
+                var level2 = parseInt(level1)
+                var level = document.getElementById("ddlselect").options[document.getElementById("ddlselect").selectedIndex].text
+                var levelID = parseInt(level)
+
+                if (levelID == 2) {
+
+                    if (level2 >= total1) {
+                        alert("Level 1 Value cannot be greater than or equal to Total SLA");
+                        return false;
+                    }
+                    else if (level2 == total1) {
+                        alert("Total SLA and Level 1 value cannot be same");
+                        return false;
+                    }
+                    else {
+
+                        if (level1 != "" && total != "") {
+                            ($("#txtlevel2")).val((total1 - level2))
+                        }
+                        document.getElementById('txtlevel2').disabled = 'false';
+
+                    }
+
+
+                }
+                else if (levelID == 1) {
+
+                    ($("#txtlevel1")).val(total);
+                    document.getElementById('txtlevel1').disabled = 'false';
+
+                }
+            }
+        }
+
+       
+                 
+
+
+</script>
+    <input type="hidden" name="ctl00$MainContent$hdnNoLevels" id="ctl00_MainContent_hdnNoLevels">
+
+                             
+</div>
+
+            </div>
+
+            <div class="clear-10"></div>
+        </div>
+
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("ctl00_ToolkitScriptManager1_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"ctl00_UpdatePanelMain","displayAfter":0,"dynamicLayout":false}, null, null, $get("ctl00_UpdateProgress2"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalPopup-trans-bg","PopupControlID":"ctl00_UpdateProgress2","dynamicServicePath":"/Common/AMSNew/AttendanceCutoff.aspx","id":"ctl00_modalPopup"}, null, null, $get("ctl00_UpdateProgress2"));
+});
+//]]>
+</script>
+</form>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).bind("keydown keypress", function (e) {
+        if (e.which == 8) {
+            if (e.target.disabled || e.target.readOnly) {
+                e.preventDefault();
+            }
+        }
+    });
+
+    function reSizeWindow() {
+        var height = '';
+        var width = '';
+        if (window.innerWidth != undefined) {
+            height = window.innerHeight;
+            width = window.innerWidth;
+        }
+        else {
+            var B = document.body,
+                D = document.documentElement;
+            height = document.documentElement.clientHeight;
+            width = Math.max(D.clientWidth, B.clientWidth);
+        }
+
+
+
+        var gridScroll = $(".gridScroll").closest('div');
+        if (gridScroll.length > 0) {
+            gridScroll.css({ "margin-left": "20px" });
+            gridScroll.width($("#divMain").width() - 120)
+                .css({ "overflow-x": "auto" });
+            $(".gridScroll th").closest('tr').css({ "background-image": "url('Images/gridBackImage.JPG')", "color": "white", "white-space": "nowrap", "height": "30px" });
+            gridScroll.find("table th").css({ "padding": "5px" });
+            gridScroll.find("table td").css({ "padding": "3px", "text-align": "left" });
+        }
+
+    }
+
+    $(window).resize(function () {
+        reSizeWindow();
+    });
+
+    function pageLoad() {
+        //debugger;
+        $("[id$='menu'] li a").css("background-position", "0 0");
+        if (window.location.href == null || window.location.href == undefined)
+            $("[id$='menu'] li a:first").css("background-position", "-79px 0");
+        else {
+            var location = window.location.href.split('/');
+            var pageName = location[location.length - 1].replace("#", "").replace("OTApproval", "Default");
+            pageName = pageName == "" ? "Default.aspx" : pageName;
+            if (pageName == "AttendanceJobReRun.aspx")
+                $("[id$='menu'] li a[href='" + pageName + "']").css("background-position", "-137px 0");
+            else
+                $("[id$='menu'] li a[href='" + pageName + "']").css("background-position", "-79px 0");
+        }
+
+        if (typeof contentPageLoad == 'function')
+            contentPageLoad();
+
+        bubbleInfo();
+
+
+
+        reSizeWindow();
+        $(window).resize();
+
+        //debugger;
+        var sessionTimeoutWarning = '12';
+        var sessionTimeout = "30";
+        var sTimeout = parseInt(sessionTimeoutWarning) * 10 * 1000;
+
+        var timeOnPageLoad = new Date();
+
+
+
+
+
+
+        var manager = Sys.WebForms.PageRequestManager.getInstance();
+        //  manager.add_endRequest(endRequest);
+        manager.add_beginRequest(OnBeginRequest);
+        manager.add_endRequest(EndRequestHandler);
+    };
+
+    function OnBeginRequest(sender, args) {
+        var postBackElement = args.get_postBackElement();
+        //        if (postBackElement.id == 'lstStates') {
+        //            $get('UpdateProgress2').style.display = "block";
+        //        }
+
+        //Shows the modal popup - the update progress
+        var popup = $find('ctl00_modalPopup');
+        if (popup != null) {
+            popup._backgroundElement.style.zIndex = 10010;
+            popup._foregroundElement.style.zIndex = 10011;
+            popup.show();
+        }
+    }
+
+    function EndRequestHandler(sender, args) {
+        //Hide the modal popup - the update progress
+        var popup = $find('ctl00_modalPopup');
+        if (popup != null) {
+            popup.hide();
+        }
+    }
+
+
+
+    //Session Warning
+    function SessionWarning(sessionTimeout, sessionTimeoutWarning, timeOnPageLoad) {
+        //debugger;
+        //minutes left for expiry
+        var timeOnPageLoadnew = new Date(timeOnPageLoad);
+        var minutesForExpiry = (parseInt(sessionTimeout) -
+            parseInt(sessionTimeoutWarning));
+        var message = "Your session will expire in another " + minutesForExpiry +
+            " mins! Please Save the data before the session expires";
+        // alert(message);
+        var currentTime = new Date();
+        //time for expiry
+        var timeForExpiry = timeOnPageLoadnew.setMinutes(timeOnPageLoadnew.getMinutes()
+            + parseInt(sessionTimeout));
+
+        //Current time is greater than the expiry time
+
+        if (Date.parse(currentTime) > timeForExpiry) {
+
+            alert("Sessionsss expired. You will be redirected to home page");
+
+            //  window.location = "../Default.aspx";
+
+        }
+    }
+
+    //Session timeout add home page where you want to redirect after session timeout
+    function RedirectToWelcomePage() {
+
+        //debugger;
+        var sessionTimeout = "30";
+
+        if (parseInt(sessionTimeout) * 60 * 1000 == 60000) {
+            alert("Session expiredssssss. You will be redirected to home page");
+            //   window.location = "../Default.aspx";
+        }
+
+
+
+    }
+
+
+    //  http://w-pune-asdintts/AUS/AMS/
+
+
+
+    function bubbleInfo() {
+
+        $(".ellipsis").each(function () {
+            Ellipsis($(this), 10);
+        });
+
+        $('.bubbleInfo').each(function () {
+            var distance = 10;
+            var time = 250;
+            var hideDelay = 500;
+
+            var hideDelayTimer = null;
+
+            var beingShown = false;
+            var shown = false;
+            var trigger = $('.trigger', this);
+            var info = $('.tooltip', this).css('opacity', 0);
+
+            $([trigger.get(0), info.get(0)])
+                .mouseover(function () {
+                    if (hideDelayTimer) clearTimeout(hideDelayTimer);
+                    if (beingShown || shown) {
+                        // don't trigger the animation again
+                        return;
+                    } else {
+                        // reset position of info box
+                        beingShown = true;
+                        // var textbox = $(this).parent().find("input, select, textarea :first");
+                        var div = $(this);
+                        //                $(this).parent().find(".HistoryGrid").attr('cellspacing','5').attr('cellpadding','5');
+
+                        info.css({
+                            top: div.offset() ? div.offset().top - 25 : info.css("top"),
+                            left: div.offset() ? div.offset().left + div.width() + 10 : info.css("top"),
+                            display: 'block',
+                            margin: '0 25px 15px 25px',
+                            padding: '0 25px 15px 25px'
+                        }).animate({
+                            top: '-=' + distance + 'px',
+                            opacity: 1
+                        }, time, 'swing', function () {
+                            beingShown = false;
+                            shown = true;
+                        });
+                    }
+                    return false;
+                })
+                .mouseout(function () {
+                    if (hideDelayTimer) clearTimeout(hideDelayTimer);
+                    hideDelayTimer = setTimeout(function () {
+                        hideDelayTimer = null;
+                        info.animate({
+                            top: '-=' + distance + 'px',
+                            opacity: 0
+                        }, time, 'swing', function () {
+                            shown = false;
+                            info.css('display', 'none');
+                        });
+
+                    }, hideDelay);
+
+                    return false;
+                });
+        });
+    }
+
+
+
+</script>
+
+</body></html>

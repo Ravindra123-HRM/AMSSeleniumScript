@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="none">
+  <listeners>
+    <listener class-name="com.ams.qa.base.Listeners"/>
+  </listeners>
+  <test name="Validating UserManagementManageRoles">
+    <classes>
+      <class name="com.ams.qa.testcases.UserManagementManageRolesTest"/>
+    </classes>
+  </test> <!-- Validating UserManagementManageRoles -->
+  <test name="Validating AssignRoles">
+    <classes>
+      <class name="com.ams.qa.testcases.AssignRolesTest"/>
+    </classes>
+  </test> <!-- Validating AssignRoles -->
+  <test name="Validating AssignCostcenter">
+    <classes>
+      <class name="com.ams.qa.testcases.AssignCostcenterTest"/>
+    </classes>
+  </test> <!-- Validating AssignCostcenter -->
+  <test name="Validating AssignSubDepartmentToManageEscalation">
+    <classes>
+      <class name="com.ams.qa.testcases.AssignSubDepartmentToManageEscalationTest"/>
+    </classes>
+  </test> <!-- Validating AssignSubDepartmentToManageEscalation -->
+  <test name="Validating AssignReports">
+    <classes>
+      <class name="com.ams.qa.testcases.AssignReportsTest"/>
+    </classes>
+  </test> <!-- Validating AssignReports -->
+  <test name="Validating AssignSubDepartmentToManageEscalation(failed)" parallel="none">
+    <classes>
+      <class name="com.ams.qa.testcases.AssignSubDepartmentToManageEscalationTest">
+        <methods>
+          <include name="setup"/>
+          <include name="Teardown"/>
+          <include name="getEdit"/>
+          <include name="getUpdate"/>
+          <include name="getCostCenter"/>
+          <include name="getSubDepartment"/>
+          <include name="getUserMnagement"/>
+          <include name="getAssignSubDepartmentToManageEscalation"/>
+          <include name="getAdd"/>
+          <include name="getUserRegisteration"/>
+          <include name="getRole"/>
+          <include name="getEmployee"/>
+        </methods>
+      </class> <!-- com.ams.qa.testcases.AssignSubDepartmentToManageEscalationTest -->
+      <class name="com.ams.qa.testcases.AssignReportsTest">
+        <methods>
+          <include name="setup"/>
+          <include name="Teardown"/>
+        </methods>
+      </class> <!-- com.ams.qa.testcases.AssignReportsTest -->
+      <class name="com.ams.qa.testcases.AssignCostcenterTest">
+        <methods>
+          <include name="setup"/>
+          <include name="Teardown"/>
+        </methods>
+      </class> <!-- com.ams.qa.testcases.AssignCostcenterTest -->
+      <class name="com.ams.qa.testcases.UserManagementManageRolesTest">
+        <methods>
+          <include name="setup"/>
+          <include name="Teardown"/>
+        </methods>
+      </class> <!-- com.ams.qa.testcases.UserManagementManageRolesTest -->
+      <class name="com.ams.qa.testcases.AssignRolesTest">
+        <methods>
+          <include name="setup"/>
+          <include name="Teardown"/>
+        </methods>
+      </class> <!-- com.ams.qa.testcases.AssignRolesTest -->
+    </classes>
+  </test> <!-- Validating AssignSubDepartmentToManageEscalation(failed) -->
+</suite> <!-- Failed suite [Suite] -->

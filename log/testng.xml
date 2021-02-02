@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+
+<listeners>
+<listener class-name="com.ams.qa.base.Listeners"/>
+</listeners>
+
+ <test  name="Validating UserManagementManageRoles"> 
+    <classes>
+   <class name="com.ams.qa.testcases.UserManagementManageRolesTest"/>
+     </classes>
+  </test>
+  
+   <test  name="Validating AssignRoles"> 
+    <classes>
+   <class name="com.ams.qa.testcases.AssignRolesTest"/>
+     </classes>
+  </test>
+  
+   <test  name="Validating AssignCostcenter"> 
+    <classes>
+   <class name="com.ams.qa.testcases.AssignCostcenterTest"/>
+     </classes>
+  </test>
+  
+   <test  name="Validating AssignSubDepartmentToManageEscalation"> 
+    <classes>
+    <class name="com.ams.qa.testcases.AssignSubDepartmentToManageEscalationTest"/>
+     </classes>
+  </test>
+    
+  
+ <test  name="Validating AssignReports"> 
+    <classes>
+   <class name="com.ams.qa.testcases.AssignReportsTest"/>
+     </classes>
+  </test>
+
+ 
+       
+  
+  
+ 
+     
+    
+    
+      
+  
+
+</suite> <!-- Suite -->
